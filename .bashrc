@@ -175,7 +175,13 @@ function pb() {
     echo "$@" | pbcopy
 }
 
-
+function activate_virtualenv() {
+    if [ -f env/bin/activate ]; then . env/bin/activate;
+    elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
+    elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
+    elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
+    fi
+}
 
 ######################################################################
 #			      			Cheet sheet
